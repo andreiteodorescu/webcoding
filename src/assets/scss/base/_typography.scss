@@ -10,6 +10,7 @@
   font-size: 4rem;
   margin-bottom: 35px;
   font-weight: 800;
+  @include left-slide-animation;
 
   &:after {
     content: "";
@@ -18,5 +19,11 @@
     width: 50px;
     height: 5px;
     background-color: #be2edd;
+    transform: translateX(-300px);
+    transition: all 0.8s ease-out;
   }
+}
+
+.in-view .general-title, .in-view .general-title:after {
+  @include sides-animation-stop;
 }

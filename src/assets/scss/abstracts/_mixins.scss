@@ -1,0 +1,24 @@
+@mixin animation-props {
+  transition: all 0.8s ease-out;
+  opacity: 0;
+}
+
+@mixin left-slide-animation {
+  transform: translateX(-300px);
+  @include animation-props;
+}
+
+@mixin right-slide-animation {
+  transform: translateX(300px);
+  @include animation-props;
+}
+
+@mixin bottom-slide-animation {
+  transform: translateY(150px);
+  @include animation-props;
+}
+
+@mixin sides-animation-stop {
+  transform: translateX(0);
+  opacity: 1;
+}

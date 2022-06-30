@@ -1,11 +1,66 @@
-.component-about-strength {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
-  gap: 50px;
-}
-
 .component-about-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 50px;
+  align-items: center;
+}
+
+.about-summary {
+  @include left-slide-animation;
+}
+
+.about-image {
+  @include bottom-slide-animation;
+
+  &-shape {
+    clip-path: polygon(20% 15%, 80% 5%, 100% 50%, 82% 95%, 25% 91%, 0% 43%);
+  }
+}
+
+.skill-summary {
+  @include right-slide-animation;
+
+  &-item {
+    background-color: #eee;
+    margin: 5px 0;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-tag {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 800;
+    text-shadow: 2px 2px rgba(0,0,0,0.2);
+    background: $blue-gradient;
+    transition: 1.1s 0.2s width ease-in-out;
+    width: 120px;
+  }
+
+  &-percentage {
+    width: 10%;
+    font-weight: 800;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.in-view {
+  .about-image {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .about-summary, .skill-summary {
+    @include sides-animation-stop;
+  }
+
+  .skill-summary-tag {
+    width: 100%;
+  }
 }
