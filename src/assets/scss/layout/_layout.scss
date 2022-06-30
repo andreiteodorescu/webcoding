@@ -1,0 +1,33 @@
+.main {
+  overflow-x: hidden;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1320px;
+}
+
+.white-cut-top, .white-cut-bottom {
+  position: relative;
+}
+
+.white-cut-bottom:after, .white-cut-top:before {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4rem;
+  left: 0;
+  background: linear-gradient(-182deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 50%,rgba(255,255,255,0) 50%,#fff 51%,#fff 100%);
+}
+
+.white-cut-top:before {
+  content: "";
+  top: 0;
+  transform: scale(1,-1);
+}
+
+.white-cut-bottom:after {
+  content: "";
+  bottom: 0;
+}

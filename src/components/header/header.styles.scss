@@ -1,0 +1,61 @@
+.header {
+  padding: 100px 0;
+  background: #01cfe3 linear-gradient(45deg, #58e7f5 0, #01cfe3 50%, rgba(79, 59, 219, 0.8) 100%);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  display: grid;
+  align-items: center;
+}
+
+.dive-down {
+  display: none;
+  width: 48px;
+  height: 96px;
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  margin-left: -24px;
+  background: url(../../assets/images/pointing-hand@1x.png) center center no-repeat;
+  background-size: cover;
+  z-index: 100;
+  border: 0;
+  cursor: pointer;
+  //pointer-events: none;
+  animation: 2s ease-in-out infinite dive-down;
+  transition: opacity .2s, bottom .2s;
+  transition-delay: 1.4s
+}
+
+.dive-down.disappear, .no-js .dive-down {
+  opacity: 0;
+  bottom: -9.75rem;
+  transition-delay: 0s
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+  .dive-down {
+    background-image: url(../../assets/images/pointing-hand@2x.png)
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    height: 100vh;
+    padding: 0;
+  }
+
+  .dive-down {
+    display: block;
+  }
+}
+
+@media (min-height: 800px) {
+  .dive-down {
+    width: 78px;
+    height: 156px;
+    margin-left: -39px;
+    bottom: 2vh;
+  }
+}
+
