@@ -11,7 +11,7 @@
   outline: none;
   text-decoration: none;
   z-index: 2;
-  color:#be2edd;
+  color:$purple-bg;
 
   &:before {
     transition: 0.5s all ease;
@@ -22,7 +22,7 @@
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: #be2edd;
+    background-color: $purple-bg;
     z-index: -2;
   }
 

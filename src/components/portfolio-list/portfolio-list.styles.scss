@@ -1,0 +1,95 @@
+.component-portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 40px;
+}
+
+@mixin animated-bg-odd {
+  transition-delay: 0.9s;
+  transition-timing-function: ease-out;
+}
+
+@mixin animated-bg-even {
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.component-portfolio-item {
+  display: grid;
+  grid-template-columns: 100% 100%;
+  border: 1px solid $light-grey;
+
+  &:nth-child(1) .component-portfolio-animated-bg {
+    @include animated-bg-odd;
+  }
+
+  &:nth-child(2) .component-portfolio-animated-bg {
+    @include animated-bg-even;
+  }
+
+  &:nth-child(3) .component-portfolio-animated-bg {
+    @include animated-bg-odd;
+  }
+
+  &:nth-child(4) .component-portfolio-animated-bg {
+    @include animated-bg-even;
+  }
+}
+
+.component-portfolio-inner {
+  padding: 20px;
+  grid-row: 1;
+  grid-column: 1;
+
+  &-title {
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+  }
+
+  &-tech {
+    display: flex;
+    margin-bottom: 15px;
+
+    li {
+      padding-left: 16px;
+      margin-left: 10px;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        width: 6px;
+        height: 6px;
+        background-color: $purple-bg;
+        top: 50%;
+        left: 0;
+        margin-top: -2px;
+      }
+
+      &:first-child {
+        margin-left: 0;
+        padding-left: 0;
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.component-portfolio-animated-bg {
+  background: $light-grey;
+  transition: 0.8s width;
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+.component-portfolio-item.in-view {
+  .component-portfolio-animated-bg {
+    width: 0;
+  }
+}
