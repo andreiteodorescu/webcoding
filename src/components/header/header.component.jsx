@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
     useEffect(() => {
@@ -29,11 +28,9 @@ const Header = () => {
         <header className="header white-cut-bottom" id="header">
             <div className="container">
                 <h1 className="main-title">
-                    <span itemProp="name">Hi! I am Andrei.</span>
+                    <span className="d-block" itemProp="name">Hi! I am Andrei.</span>
                     I build interactive websites that run across platforms & devices
                 </h1>
-
-                <Link className="btn-primary" to="/work-bench">Resume (de mutat)</Link>
             </div>
             <button className="dive-down" aria-label="Go to next section"></button>
         </header>

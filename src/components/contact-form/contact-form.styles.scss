@@ -2,42 +2,102 @@
   background-image: $blue-gradient-reverse;
   padding: 100px 0;
   color: #fff;
+  overflow: hidden;
 
   &-title {
-    margin-bottom: 50px;
     text-shadow: $text-shadow;
-
-    &:after {
-      display: none;
-    }
   }
 
   &-field-wrap {
-    margin-bottom: 35px;
     font-weight: 300;
+    display: flex;
+    flex-direction: column;
 
-    &.err .input-field, &.err .enquire-form-textarea {
-      border: 1px solid $purple-bg;
+    .error {
+      color: #be2edd;
+      margin-top: 5px;
+      font-size: 1.5rem;
+      order: 3;
     }
+
+    &:nth-child(1) {
+      @include left-slide-animation;
+    }
+
+    &:nth-child(2) {
+      @include right-slide-animation;
+    }
+
+    &:nth-child(3) {
+      @include bottom-slide-animation;
+      grid-column: span 2;
+    }
+  }
+
+  &-submit-wrap {
+    @include bottom-slide-animation;
+    transition-delay: 0.3s;
   }
 
   &-label {
     display: block;
     margin: 0 0 8px;
     text-shadow: 2px 2px rgba(0,0,0,0.1);
+    order: 1;
+    transition: all .3s;
+    padding: 0 18px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
+  &.in-view {
+    .component-contact-field-wrap {
+      &:nth-child(1), &:nth-child(2) {
+        @include sides-animation-stop;
+      }
+
+      &:nth-child(3) {
+        @include bottom-animation-stop;
+      }
+    }
+
+    .component-contact-submit-wrap {
+      @include bottom-animation-stop;
+    }
   }
 }
 
-.input-field, .enquire-form-textarea {
+.input-field {
   border:none;
   width: 100%;
-  outline: none;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-  padding: 15px 18px 16px;
-  transition: 0.75s ease all;
-  border-radius: 0;
+  padding: 15px 18px;
+  font-family: inherit;
+  border-bottom: 3px solid transparent;
+  font-size: 1.5rem;
+  color: $text-default;
+  order: 2;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  }
+
+  &::placeholder {
+    color: $color-dark-grey;
+  }
+
+  &:placeholder-shown + .component-contact-label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+  }
 }
 
-.enquire-form-textarea {
+textarea.input-field {
   resize: none;
 }

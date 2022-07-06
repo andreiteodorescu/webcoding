@@ -1,3 +1,7 @@
+.component-about {
+  overflow: hidden;
+}
+
 .component-about-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -53,8 +57,7 @@
 
 .in-view {
   .about-image {
-    opacity: 1;
-    transform: translateY(0);
+    @include bottom-animation-stop;
   }
   .about-summary, .skill-summary {
     @include sides-animation-stop;

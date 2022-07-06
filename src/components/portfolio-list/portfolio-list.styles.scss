@@ -1,9 +1,3 @@
-.component-portfolio-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  gap: 40px;
-}
-
 @mixin animated-bg-odd {
   transition-delay: 0.9s;
   transition-timing-function: ease-out;
@@ -14,25 +8,63 @@
   transition-timing-function: ease-in;
 }
 
+@mixin inner-contents-animation {
+  transform: translateY(80px);
+  transition: all 0.8s;
+  transition-timing-function: ease-out;
+  opacity: 0;
+}
+
+.component-portfolio {
+  overflow: hidden;
+}
+
+.component-portfolio-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 40px;
+}
+
 .component-portfolio-item {
   display: grid;
   grid-template-columns: 100% 100%;
   border: 1px solid $light-grey;
+  overflow: hidden;
 
-  &:nth-child(1) .component-portfolio-animated-bg {
-    @include animated-bg-odd;
+  &:nth-child(1), &:nth-child(3) {
+    .component-portfolio-animated-bg {
+      @include animated-bg-odd;
+    }
+
+    .component-portfolio-inner-title {
+      transition-delay: 1.2s;
+    }
+
+    .component-portfolio-inner-tech {
+      transition-delay: 1.3s;
+    }
+
+    .component-portfolio-inner-year {
+      transition-delay: 1.4s;
+    }
   }
 
-  &:nth-child(2) .component-portfolio-animated-bg {
-    @include animated-bg-even;
-  }
+  &:nth-child(2), &:nth-child(4) {
+    .component-portfolio-animated-bg {
+      @include animated-bg-even;
+    }
 
-  &:nth-child(3) .component-portfolio-animated-bg {
-    @include animated-bg-odd;
-  }
+    .component-portfolio-inner-title {
+      transition-delay: 0.8s;
+    }
 
-  &:nth-child(4) .component-portfolio-animated-bg {
-    @include animated-bg-even;
+    .component-portfolio-inner-tech {
+      transition-delay: 0.9s;
+    }
+
+    .component-portfolio-inner-year {
+      transition-delay: 1s;
+    }
   }
 }
 
@@ -44,11 +76,13 @@
   &-title {
     font-size: 2.6rem;
     margin-bottom: 15px;
+    @include inner-contents-animation;
   }
 
   &-tech {
     display: flex;
     margin-bottom: 15px;
+    @include inner-contents-animation;
 
     li {
       padding-left: 16px;
@@ -77,6 +111,11 @@
       }
     }
   }
+
+  &-year {
+    display: block;
+    @include inner-contents-animation;
+  }
 }
 
 .component-portfolio-animated-bg {
@@ -91,5 +130,10 @@
 .component-portfolio-item.in-view {
   .component-portfolio-animated-bg {
     width: 0;
+  }
+
+  .component-portfolio-inner-title, .component-portfolio-inner-tech, .component-portfolio-inner-year {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

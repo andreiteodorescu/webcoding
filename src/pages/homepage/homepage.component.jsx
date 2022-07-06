@@ -32,7 +32,7 @@ const HomePage = () => {
                 <section className="component-portfolio component-margin" ref={portfolioRef}>
                     <PortfolioList />
                 </section>
-                <section className="component-contact component-margin" ref={contactRef}>
+                <section className="component-contact white-cut-top white-cut-bottom component-margin" ref={contactRef}>
                     <ContactForm />
                 </section>
             </main>

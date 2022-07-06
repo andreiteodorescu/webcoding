@@ -12,6 +12,7 @@
   text-decoration: none;
   z-index: 2;
   color:$purple-bg;
+  font-size: $base-font-size;
 
   &:before {
     transition: 0.5s all ease;
