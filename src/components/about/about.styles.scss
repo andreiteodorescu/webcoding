@@ -10,15 +10,12 @@
 }
 
 .about-summary {
-  @include left-slide-animation;
+  //@include left-slide-animation;
 }
 
 .about-image {
-  @include bottom-slide-animation;
-
-  &-shape {
-    clip-path: polygon(20% 15%, 80% 5%, 100% 50%, 82% 95%, 25% 91%, 0% 43%);
-  }
+  //@include bottom-slide-animation;
+  clip-path: polygon(20% 15%, 80% 5%, 100% 50%, 82% 95%, 25% 91%, 0% 43%);
 }
 
 .skill-summary {
@@ -32,6 +29,12 @@
     justify-content: space-between;
   }
 
+  &-fill {
+    overflow: hidden;
+    width: 10%;
+    transition: 1.1s 0.2s width ease-in-out;
+  }
+
   &-tag {
     height: 100%;
     color: #fff;
@@ -41,8 +44,7 @@
     font-weight: 800;
     text-shadow: $text-shadow;
     background: $blue-gradient;
-    transition: 1.1s 0.2s width ease-in-out;
-    width: 120px;
+    width: 354px;
   }
 
   &-percentage {
@@ -57,13 +59,28 @@
 
 .in-view {
   .about-image {
-    @include bottom-animation-stop;
+    //@include bottom-animation-stop;
   }
-  .about-summary, .skill-summary {
+
+  .skill-summary {
     @include sides-animation-stop;
   }
 
-  .skill-summary-tag {
-    width: 100%;
+  .skill-summary-item {
+    &:nth-child(1), &:nth-child(2) {
+      .skill-summary-fill {
+        width: 90%;
+      }
+    }
+
+    &:nth-child(3) .skill-summary-fill {
+      width: 70%;
+    }
+
+    &:nth-child(4) .skill-summary-fill {
+      width: 50%;
+    }
   }
+
+
 }

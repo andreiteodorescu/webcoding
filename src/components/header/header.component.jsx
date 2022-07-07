@@ -28,8 +28,8 @@ const Header = () => {
         <header className="header white-cut-bottom" id="header">
             <div className="container">
                 <h1 className="main-title">
-                    <span className="d-block" itemProp="name">Hi! I am Andrei.</span>
-                    I build interactive websites that run across platforms & devices
+                    <span className="d-block main-title-intro" itemProp="name">Hi! I am Andrei.</span>
+                    <span className="d-block main-title-desc">I build interactive websites that run across platforms & devices</span>
                 </h1>
             </div>
             <button className="dive-down" aria-label="Go to next section"></button>

@@ -1,6 +1,6 @@
 @mixin animation-props {
-  transition: all 0.8s ease-out;
   opacity: 0;
+  transition: transform 0.8s ease-out, opacity 1s ease-out;
 }
 
 @mixin left-slide-animation {

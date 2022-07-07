@@ -10,9 +10,9 @@
 
 @mixin inner-contents-animation {
   transform: translateY(80px);
-  transition: all 0.8s;
-  transition-timing-function: ease-out;
   opacity: 0;
+  transition: transform 0.8s, opacity 0.8s;
+  transition-timing-function: ease-out;
 }
 
 .component-portfolio {
@@ -31,7 +31,7 @@
   border: 1px solid $light-grey;
   overflow: hidden;
 
-  &:nth-child(1), &:nth-child(3) {
+  &:nth-child(odd) {
     .component-portfolio-animated-bg {
       @include animated-bg-odd;
     }
@@ -49,7 +49,7 @@
     }
   }
 
-  &:nth-child(2), &:nth-child(4) {
+  &:nth-child(even) {
     .component-portfolio-animated-bg {
       @include animated-bg-even;
     }
@@ -69,7 +69,7 @@
 }
 
 .component-portfolio-inner {
-  padding: 20px;
+  padding: 15px 20px;
   grid-row: 1;
   grid-column: 1;
 
@@ -120,7 +120,7 @@
 
 .component-portfolio-animated-bg {
   background: $light-grey;
-  transition: 0.8s width;
+  transition: width 0.8s;
   grid-row: 1;
   grid-column: 1;
   width: 100%;

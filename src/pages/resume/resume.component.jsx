@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-class WorkBench extends React.Component {
+class Resume extends React.Component {
     constructor(props) {
         super(props);
 
@@ -31,4 +31,4 @@ class WorkBench extends React.Component {
     }
 }
 
-export default WorkBench;
+export default Resume;

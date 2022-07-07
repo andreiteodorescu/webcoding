@@ -3,6 +3,11 @@
   padding: 100px 0;
   color: #fff;
   overflow: hidden;
+  min-height: 780px;
+
+  a {
+    color: #fff;
+  }
 
   &-title {
     text-shadow: $text-shadow;
@@ -14,7 +19,7 @@
     flex-direction: column;
 
     .error {
-      color: #be2edd;
+      color: $purple-bg;
       margin-top: 5px;
       font-size: 1.5rem;
       order: 3;
@@ -48,10 +53,31 @@
     padding: 0 18px;
   }
 
-  form {
+  &-initial {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 35px;
+    gap: 20px 40px;
+  }
+
+  &-submit-wrap {
+    padding-top: 30px;
+  }
+
+  &-after-title {
+    font-size: 3rem;
+    text-align: center;
+    line-height: $line-height-general;
+  }
+
+  &-success, &-failed {
+    display: none;
+  }
+
+  &-failed .component-contact-after-title {
+    text-align: left;
+    line-height: normal;
+    font-size: 2rem;
+    margin-top: 15px;
   }
 
   &.in-view {

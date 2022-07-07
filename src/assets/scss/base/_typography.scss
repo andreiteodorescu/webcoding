@@ -1,9 +1,16 @@
 .main-title {
   font-size:3.5rem;
   font-weight: 800;
-  line-height:$line-height;
+  line-height:$line-height-general;
   text-shadow: $text-shadow;
-  margin-bottom: 35px;
+
+  &-intro {
+    animation: 1s ease-out 1 main-title-intro;
+  }
+
+  &-desc {
+    animation: 1s ease-out 1 main-title-desc;
+  }
 }
 
 .general-title {
@@ -15,7 +22,7 @@
   &:after {
     content: "";
     display: block;
-    margin: 15px auto 0;
+    margin: 10px auto 0;
     width: 50px;
     height: 5px;
     background-color: $purple-bg;
