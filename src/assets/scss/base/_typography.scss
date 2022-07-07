@@ -3,13 +3,14 @@
   font-weight: 800;
   line-height:$line-height-general;
   text-shadow: $text-shadow;
+  backface-visibility: hidden;
 
   &-intro {
-    animation: 1s ease-out 1 main-title-intro;
+    animation: moveInLeft 1s ease-out;
   }
 
   &-desc {
-    animation: 1s ease-out 1 main-title-desc;
+    animation: moveInRight 1s ease-out;
   }
 }
 
