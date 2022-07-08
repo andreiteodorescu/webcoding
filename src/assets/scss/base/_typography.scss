@@ -1,3 +1,10 @@
+body {
+  font-size: $base-font-size;
+  font-family: 'Open Sans', sans-serif;
+  line-height: $line-height-general;
+  color: $text-default;
+}
+
 .main-title {
   font-size:3.5rem;
   font-weight: 800;
@@ -16,22 +23,22 @@
 
 .general-title {
   font-size: 4rem;
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
   font-weight: 800;
-  @include left-slide-animation;
+  @include side-slide-animation(-30rem);
 
-  &:after {
+  &::after {
     content: "";
     display: block;
-    margin: 10px auto 0;
-    width: 50px;
-    height: 5px;
+    margin: 1rem auto 0;
+    width: 5rem;
+    height: 0.5rem;
     background-color: $purple-bg;
-    transform: translateX(-300px);
-    transition: all 0.8s ease-out;
+    transform: translateX(-30rem);
+    transition: all .8s ease-out;
   }
 }
 
-.in-view .general-title, .in-view .general-title:after {
+.in-view .general-title, .in-view .general-title::after {
   @include sides-animation-stop;
 }

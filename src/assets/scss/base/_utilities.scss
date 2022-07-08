@@ -1,16 +1,5 @@
 .component-margin {
-  margin: 100px 0 0;
-}
-
-.separator {
-  &:before {
-    display: block;
-    margin: 34px auto 68px;
-    content: "";
-    width: 4px;
-    height: 200px;
-    background-color: #E9E9E9;
-  }
+  margin: 10rem 0 0;
 }
 
 .text-center {
@@ -26,7 +15,5 @@
 }
 
 .d-flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-centered;
 }

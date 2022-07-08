@@ -5,12 +5,12 @@
 .component-about-info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 50px;
+  gap: 5rem;
   align-items: center;
 }
 
 .about-summary {
-  //@include left-slide-animation;
+  //@include side-slide-animation(-30rem);
 }
 
 .about-image {
@@ -19,12 +19,12 @@
 }
 
 .skill-summary {
-  @include right-slide-animation;
+  @include side-slide-animation(30rem);
 
   &-item {
     background-color: $light-grey;
-    margin: 5px 0;
-    height: 35px;
+    margin: 0.5rem 0;
+    height: 3.5rem;
     display: flex;
     justify-content: space-between;
   }
@@ -32,7 +32,7 @@
   &-fill {
     overflow: hidden;
     width: 10%;
-    transition: 1.1s 0.2s width ease-in-out;
+    transition: 1.1s .2s width ease-in-out;
   }
 
   &-tag {
@@ -40,20 +40,18 @@
     color: #fff;
     display: flex;
     align-items: center;
-    padding-left: 10px;
+    padding-left: 1rem;
     font-weight: 800;
     text-shadow: $text-shadow;
     background: $blue-gradient;
-    width: 354px;
+    width: 35.4rem;
   }
 
   &-percentage {
     width: 10%;
     font-weight: 800;
     font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-centered;
   }
 }
 

@@ -1,20 +1,15 @@
 @mixin animation-props {
   opacity: 0;
-  transition: transform 0.8s ease-out, opacity 1s ease-out;
+  transition: transform .8s ease-out, opacity 1s ease-out;
 }
 
-@mixin left-slide-animation {
-  transform: translateX(-300px);
-  @include animation-props;
-}
-
-@mixin right-slide-animation {
-  transform: translateX(300px);
+@mixin side-slide-animation($direction) {
+  transform: translateX($direction);
   @include animation-props;
 }
 
 @mixin bottom-slide-animation {
-  transform: translateY(150px);
+  transform: translateY(15rem);
   @include animation-props;
 }
 
@@ -26,4 +21,27 @@
 @mixin bottom-animation-stop {
   opacity: 1;
   transform: translateY(0);
+}
+
+@mixin flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin animated-bg-odd { // used in the portfolio component
+  transition-delay: .9s;
+  transition-timing-function: ease-out;
+}
+
+@mixin animated-bg-even { // used in the portfolio component
+  transition-delay: .1s;
+  transition-timing-function: ease-in;
+}
+
+@mixin inner-contents-animation { // used in the portfolio component
+  transform: translateY(8rem);
+  opacity: 0;
+  transition: transform .8s, opacity .8s;
+  transition-timing-function: ease-out;
 }

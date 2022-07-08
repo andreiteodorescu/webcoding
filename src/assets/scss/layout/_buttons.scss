@@ -1,11 +1,11 @@
 .btn-primary {
-  transition: 0.3s ease all;
+  transition: .3s ease all;
   cursor: pointer;
   position: relative;
   display: inline-block;
-  padding: 16px 79px 15px;
+  padding: 1.6rem 7.9rem 1.5rem;
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 0.2rem 0.4rem 0 rgba(0,0,0,0.1);
   border: none;
   border-radius: 0;
   outline: none;
@@ -14,8 +14,8 @@
   color:$purple-bg;
   font-size: $base-font-size;
 
-  &:before {
-    transition: 0.5s all ease;
+  &::before {
+    transition: .5s all ease;
     position: absolute;
     top: 0;
     left: 50%;
@@ -30,8 +30,8 @@
   &:hover {
     color: #fff;
 
-    &:before {
-      transition: 0.5s all ease;
+    &::before {
+      transition: .5s all ease;
       left: 0;
       right: 0;
       opacity: 1;
