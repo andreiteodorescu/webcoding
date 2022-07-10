@@ -1,5 +1,13 @@
 .component-margin {
   margin: 10rem 0 0;
+
+  @include respond(tablet) {
+    margin: 7rem 0 0;
+  }
+
+  @include respond(mobile) {
+    margin: 5rem 0 0;
+  }
 }
 
 .text-center {

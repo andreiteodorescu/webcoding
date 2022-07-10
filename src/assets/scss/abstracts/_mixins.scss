@@ -45,3 +45,22 @@
   transition: transform .8s, opacity .8s;
   transition-timing-function: ease-out;
 }
+
+// Media query manager
+@mixin respond($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 40em) { @content }; //640px
+  }
+
+  @if $breakpoint == mobile {
+    @media (max-width: 56.25em) { @content }; //900px
+  }
+
+  @if $breakpoint == tablet {
+    @media (max-width: 81.25em) { @content }; //1300px
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 120em) { @content }; //1920px
+  }
+}

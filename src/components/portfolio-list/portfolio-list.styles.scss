@@ -60,6 +60,10 @@
     font-size: 2.6rem;
     margin-bottom: 1.5rem;
     @include inner-contents-animation;
+
+    @include respond(xs) {
+      font-size:2.2rem;
+    }
   }
 
   &-tech {

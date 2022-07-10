@@ -6,11 +6,15 @@ body {
 }
 
 .main-title {
-  font-size:3.5rem;
+  font-size:3.8rem;
   font-weight: 800;
   line-height:$line-height-general;
   text-shadow: $text-shadow;
   backface-visibility: hidden;
+
+  @include respond(xs) {
+    font-size:3rem;
+  }
 
   &-intro {
     animation: moveInLeft 1s ease-out;
@@ -22,10 +26,15 @@ body {
 }
 
 .general-title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   margin-bottom: 5rem;
   font-weight: 800;
   @include side-slide-animation(-30rem);
+
+  @include respond(xs) {
+    font-size:2.6rem;
+    margin-bottom: 4rem;
+  }
 
   &::after {
     content: "";
@@ -36,6 +45,12 @@ body {
     background-color: $purple-bg;
     transform: translateX(-30rem);
     transition: all .8s ease-out;
+
+    @include respond(xs) {
+      margin: 0.8rem auto 0;
+      width: 3rem;
+      height: 0.4rem;
+    }
   }
 }
 
