@@ -4,18 +4,46 @@
 
 .component-about-info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4rem;
   align-items: center;
+
+  @include respond(tablet) {
+    gap: 2rem;
+  }
+
+  @include respond(mobile) {
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  @include respond(500) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .about-summary {
   //@include side-slide-animation(-30rem);
+
+  @include respond(500) {
+    order: 2;
+  }
 }
 
 .about-image {
   //@include bottom-slide-animation;
   clip-path: polygon(20% 15%, 80% 5%, 100% 50%, 82% 95%, 25% 91%, 0% 43%);
+
+  @include respond(mobile) {
+    grid-row: 1;
+    grid-column: 1;
+  }
+
+  @include respond(500) {
+    grid-column: auto;
+    grid-row: auto;
+    order: 1;
+    clip-path: circle(40% at 50% 50%);
+  }
 }
 
 .skill-summary {
@@ -45,6 +73,10 @@
     text-shadow: $text-shadow;
     background: $blue-gradient;
     width: 35.4rem;
+
+    @include respond(mobile) {
+      width: 90vw;
+    }
   }
 
   &-percentage {
@@ -53,6 +85,16 @@
     font-size: 1.5rem;
     @include flex-centered;
   }
+
+  @include respond(mobile) {
+    grid-column: span 2;
+  }
+
+  @include respond(500) {
+    grid-column: auto;
+    order: 3;
+  }
+
 }
 
 .in-view {

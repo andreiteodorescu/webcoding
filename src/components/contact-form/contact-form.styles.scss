@@ -36,6 +36,10 @@
     &:nth-child(3) {
       @include bottom-slide-animation;
       grid-column: span 2;
+
+      @include respond(500) {
+        grid-column: auto;
+      }
     }
   }
 
@@ -56,7 +60,11 @@
   &-initial {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 4rem;
+    gap: 1rem 3rem;
+
+    @include respond(500) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-submit-wrap {

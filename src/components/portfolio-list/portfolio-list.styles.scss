@@ -4,8 +4,16 @@
 
 .component-portfolio-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  gap: 4rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+
+  @include respond(mobile) {
+    gap: 2rem;
+  }
+
+  @include respond(xs) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .component-portfolio-item {
@@ -49,6 +57,29 @@
       transition-delay: 1s;
     }
   }
+
+  @include respond(xs) {
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        .component-portfolio-animated-bg {
+          transition-delay: calc(0.01s * #{$i});
+          transition-timing-function: ease-in;
+        }
+
+        .component-portfolio-inner-title {
+          transition-delay: .8s;
+        }
+
+        .component-portfolio-inner-tech {
+          transition-delay: .9s;
+        }
+
+        .component-portfolio-inner-year {
+          transition-delay: 1s;
+        }
+      }
+    }
+  }
 }
 
 .component-portfolio-inner {
@@ -68,6 +99,7 @@
 
   &-tech {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 1.5rem;
     @include inner-contents-animation;
 
